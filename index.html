@@ -24,8 +24,34 @@
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    .top-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+    .top-nav .brand {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .top-nav .nav-links a {
+      margin-left: 1rem;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .top-nav .nav-links a.active {
+      border-color: rgba(148,163,184,0.7);
+      background: rgba(15,23,42,0.7);
+    }
+
     .hero {
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.2rem 1.5rem 2rem;
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
@@ -78,6 +104,11 @@
     @media (max-width: 900px) {
       .layout {
         grid-template-columns: minmax(0, 1fr);
+      }
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
       }
     }
 
@@ -167,11 +198,19 @@
   </style>
 </head>
 <body>
+  <div class="top-nav">
+    <div class="brand">KHLIFI HOUCEM · DevOps</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Offre Conseil</a>
+      <a href="formation.html">Offre Formation</a>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="badge">Offre Conseil DevOps · Freelance</div>
     <h1>Conseil <span>DevOps CI/CD & Kubernetes</span></h1>
     <p class="hero-sub">
-      Modernisez vos pipelines et vos déploiements Kubernetes avec un accompagnement pragmatique :
+      Modernisez vos pipelines et vos déploiements Kubernetes avec un accompagnement pragmatique :
       audit flash, conception de la cible et mise en œuvre guidée, basé sur un projet réel
       (GitHub Actions · GitLab CI · Jenkins · Kubernetes on‑prem).
     </p>
@@ -189,7 +228,7 @@
     <section class="card">
       <h2>Objectif de la mission</h2>
       <p>
-        Aider votre équipe à réduire le temps entre le commit et la mise en production, 
+        Aider votre équipe à réduire le temps entre le commit et la mise en production,
         sécuriser les déploiements, et diminuer le toil grâce à une chaîne CI/CD claire
         et industrialisée autour de Kubernetes.
       </p>
@@ -204,7 +243,7 @@
       <h3>2. Cible & plan de migration</h3>
       <ul>
         <li>Proposition d’architecture CI/CD cible (stages, qualité, sécurité, déploiement).</li>
-        <li>Stratégie de déploiement adaptée : rolling update, blue/green ou canary.</li>
+        <li>Stratégie de déploiement adaptée : rolling update, blue/green ou canary.</li>
         <li>Roadmap de migration pragmatique par étapes.</li>
       </ul>
 
@@ -218,9 +257,9 @@
       <div class="price-box">
         <strong>Durée & budget indicatifs</strong>
         <ul>
-          <li>Mission courte : 5 jours (audit + plan d’action).</li>
-          <li>Mission complète : 8 à 10 jours (mise en œuvre + transfert).</li>
-          <li>TJM indicatif : 600–700 € HT / jour, ajusté selon périmètre.</li>
+          <li>Mission courte : 5 jours (audit + plan d’action).</li>
+          <li>Mission complète : 8 à 10 jours (mise en œuvre + transfert).</li>
+          <li>TJM indicatif : 600–700 € HT / jour, ajusté selon périmètre.</li>
         </ul>
       </div>
     </section>
@@ -232,7 +271,7 @@
           Ingénieur & formateur DevOps – 9 ans d’expérience.
         </p>
         <p>
-          Spécialisation sur AWS, Kubernetes, Jenkins, GitLab CI, GitHub Actions, 
+          Spécialisation sur AWS, Kubernetes, Jenkins, GitLab CI, GitHub Actions,
           avec utilisation de l’IA (Antigravity) pour accélérer la conception et la maintenance
           des pipelines.
         </p>
@@ -254,13 +293,16 @@
       <section class="card">
         <h2>Exemple concret</h2>
         <p>
-          Démo technique : mini‑projet Node.js conteneurisé, déployé sur Kubernetes, 
+          Démo technique : mini‑projet Node.js conteneurisé, déployé sur Kubernetes,
           avec trois pipelines CI/CD (GitHub Actions, GitLab CI, Jenkins) et intégration IA.
         </p>
         <p>
           Le code source et la documentation peuvent être partagés en amont d’un appel
           pour illustrer les bonnes pratiques proposées.
         </p>
+        <a class="cta" href="formation.html">
+          Voir l’offre Formation (3 jours)
+        </a>
       </section>
     </aside>
   </main>
